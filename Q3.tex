@@ -1,4 +1,5 @@
-\documentclass[fleqn]{article}
+\documentclass[letterpaper]{article} % or whatever
+\usepackage[letterpaper, margin=1in]{geometry}
 \usepackage{enumitem}
 \usepackage{amsmath,amssymb}
 \usepackage{accents}
@@ -19,7 +20,7 @@ Question 3
     \begin{align}
     R(x,a)P[a \vert x]
     \end{align}
-    \textnormal{The sum of the probability for all $a$ is:}
+    \textnormal{The sum of reward for all $a$ for a given $x \in X$ is:}
     \begin{align}
         \sum_a R(x,a)P[a \vert x], \qquad \textnormal{where } a \in A
     \end{align}
@@ -30,9 +31,23 @@ Question 3
     \end{align}
 % part (ii)
 \item
-    \textnormal{}
+    \textnormal{By choosing $P[a \vert x]=1$ for action a which corresponds to the maximum reward $R_{max}[x,a]$, the expected reward for a given $x$ is: }
+    \begin{align}
+        E_{m1}=R_{max}[x,a]P[a \vert x]=R_{max}[x,a]
+    \end{align}
+    \textnormal{Assume $E_{m1}$ is not the maximum expected reward: $E_{m1}<E_{m2}$, where $E_{m2}$ corresponds to the case that the probability of action $a$ given state is $x$ is smaller than 1: $P[a \vert x]=1-\epsilon, \qquad (\epsilon = \sum \epsilon_i)$}
+    \begin{align}
+        E_{m2}=\sum_a R(x,a)P[a \vert x]=R_{max}(x)*(1-\epsilon)+R_1(x)*\epsilon_1+R_2(x)*\epsilon_2...+R_n*\epsilon_2\\
+        =R_{max}-R_{max}*(\epsilon_1+\epsilon_2...+\epsilon_n)+R_1(x)*\epsilon_1+R_2(x)*\epsilon_2...+R_n*\epsilon_2
+    \end{align}
+    \textnormal{Since $R_{max}$ is larger than the reward for any other actions $R_1, R_2..., R_n$}
+    \begin{align}
+        E_{m2}<R_{max}=E_{m1}
+    \end{align}
+    \textnormal{This is oppose to what is assumed, therefore the assumption is not correct. The $E_{m1}$ should be the maximum expected reward.}
+    
 % part (iii)
 \item
-  
+  \textnormal{By randomizing the suboptimal rule, for example $P[a \vert x]=\phi(a,\sigma)$, effect of overfitting can be reduced and lack of training data is less a problem.}
 \end{enumerate}
 \end{document}
