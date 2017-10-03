@@ -1,0 +1,38 @@
+\documentclass[fleqn]{article}
+\usepackage{enumitem}
+\usepackage{amsmath,amssymb}
+\usepackage{accents}
+\usepackage{tabto}
+\usepackage{listings}
+
+
+
+\begin{document}
+
+
+
+Question 3
+\begin{enumerate}[label={(\roman*)}]
+% part (i)
+\item
+    \textnormal{For any given state $x \in X$, the probability of the robot choose to do the action $a \in A$ is: }
+    \begin{align}
+    R(x,a)P[a \vert x]
+    \end{align}
+    \textnormal{The sum of the probability for all $a$ is:}
+    \begin{align}
+        \sum_a R(x,a)P[a \vert x], \qquad \textnormal{where } a \in A
+    \end{align}
+    
+    \textnormal{Therefore for all states $x \in X$, the reward is expected to be}
+    \begin{align}
+        \int_x \left[ \sum_a R(x,a)P[a \vert x] \right] P[x] dx
+    \end{align}
+% part (ii)
+\item
+    \textnormal{}
+% part (iii)
+\item
+  
+\end{enumerate}
+\end{document}
